@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Be My Valentine ❤️</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --pink: #ff4d6d;
+            --rose: #ff758f;
+            --bg: #0f0c29;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            font-family: Poppins, sans-serif;
+            color: #fff;
+            background: radial-gradient(1200px 600px at 10% -10%, #ff758f33, transparent),
+                radial-gradient(1000px 500px at 90% 10%, #ff4d6d33, transparent),
+                linear-gradient(180deg, #1a0b2e, #0f0c29 60%);
+            overflow-x: hidden;
+        }
+
+        header {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        h1 {
+            font-family: "Playfair Display", serif;
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            margin: 0
+        }
+
+        p.lead {
+            max-width: 680px;
+            opacity: .9;
+            margin: 1rem auto 2rem
+        }
+
+        .cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        .btn {
+            border: none;
+            padding: .9rem 1.4rem;
+            border-radius: 999px;
+            cursor: pointer;
+            color: #fff;
+            background: linear-gradient(135deg, var(--pink), var(--rose));
+            box-shadow: 0 10px 30px #ff4d6d55;
+            font-weight: 500;
+            transition: .25s transform, .25s box-shadow
+        }
+
+        .btn.secondary {
+            background: transparent;
+            border: 1px solid #ffffff55
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 36px #ff4d6d77
+        }
+
+        section {
+            padding: 5rem 1.5rem
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto
+        }
+
+        .card {
+            background: linear-gradient(180deg, #ffffff10, #ffffff05);
+            border: 1px solid #ffffff22;
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(8px)
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem
+        }
+
+        .img {
+            aspect-ratio: 1/1;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #ff4d6d55, #ff758f55),
+                radial-gradient(400px 200px at 30% 20%, #fff3, transparent);
+            display: grid;
+            place-items: center;
+            font-size: 3rem
+        }
+
+        footer {
+            padding: 3rem 1.5rem;
+            text-align: center;
+            opacity: .85
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: fixed;
+            bottom: -20px;
+            font-size: 20px;
+            animation: float 8s linear infinite;
+            opacity: .8
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1)
+            }
+
+            100% {
+                transform: translateY(-110vh) scale(1.4)
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>Will You Be My Valentine? ❤️</h1>
+            <p class="lead">A tiny corner of the internet made just for us — smiles, memories, and a whole lot of love.
+            </p>
+            <!-- <div class="cta">
+                <button class="btn" onclick="yes()">Yes, obviously 💖</button>
+                <button class="btn secondary" onclick="maybe()">Tell me more 😉</button>
+            </div> -->
+        </div>
+    </header>
+
+    <section>
+        <div class="container grid">
+            <div class="card">
+                <h2>Why You?</h2>
+                <p>You make ordinary days sparkle. You laugh, you care, and you turn moments into memories.</p>
+            </div>
+            <div class="card">
+                <h2>What I Love About You</h2>
+                <p>Your smile that fixes bad days, your kindness that feels like home, and the way you make everything
+                    better just by being you.</p>
+                <ul>
+                    <li>✨ Your beautiful smile</li>
+                    <li>💗 Your caring heart</li>
+                    <li>🌸 Your positive energy</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h2>A Promise</h2>
+                <p>More laughs, more adventures, and always choosing you — today and every day.</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="card" style="text-align:center">
+                <h2>Will You Be Mine? 💕</h2>
+                <p>I promise smiles, care, and lots of love. So… what do you say?</p>
+                <div class="cta">
+                    <button class="btn" onclick="finalYes()">Yes ❤️</button>
+                    <button class="btn secondary" id="noBtn" onmouseover="moveNo()">No 🙈</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        Made with ❤️ just for you
+    </footer>
+
+    <script>
+        function yes() {
+            alert('Yay! ❤️ Valentine secured!');
+        }
+        function maybe() {
+            alert('Okay okay, I will impress you even more 😄');
+        }
+
+        function finalYes() {
+            document.body.innerHTML = `
+        <div style="min-height:100vh;display:grid;place-items:center;text-align:center;background:linear-gradient(135deg,#ff4d6d,#ff758f);color:white;padding:2rem">
+          <h1 style="font-family:Playfair Display,serif;font-size:3rem">Yay! 💖</h1>
+          <p style="font-size:1.2rem">You just made my day, my Valentine ❤️</p>
+        </div>`;
+        }
+
+        function moveNo() {
+            const btn = document.getElementById('noBtn');
+            const x = Math.random() * 80;
+            const y = Math.random() * 60;
+            btn.style.position = 'absolute';
+            btn.style.left = x + 'vw';
+            btn.style.top = y + 'vh';
+        }
+
+        // hearts generator
+        const hearts = ['❤️', '💖', '💘', '💗', '💞'];
+        setInterval(() => {
+            const h = document.createElement('div');
+            h.className = 'heart';
+            h.style.left = Math.random() * 100 + 'vw';
+            h.style.animationDuration = 6 + Math.random() * 6 + 's';
+            h.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+            document.body.appendChild(h);
+            setTimeout(() => h.remove(), 12000);
+        }, 500);
+    </script>
+</body>
+
+</html>
